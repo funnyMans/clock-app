@@ -1,0 +1,53 @@
+:root {
+  --darkgray: #8f9dac;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  flex: 1;
+  padding: 0 1em;
+  background-color: var(--darkgray);
+  background-image: none;
+  cursor: pointer;
+  overflow: hidden;
+  cursor: pointer;
+}
+select::-webkit-scrollbar {
+  display: none;
+}
+select::-ms-expand {
+  display: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+.select {
+  margin-top: 2rem;
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  border-radius: 0.25em;
+  overflow: hidden;
+  cursor: pointer;
+}
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1em;
+  background-color: var(--darkgray);
+  transition: 0.25s all ease;
+  pointer-events: none;
+  cursor: pointer;
+}
+.select:hover::after {
+  color: #f39c12;
+}

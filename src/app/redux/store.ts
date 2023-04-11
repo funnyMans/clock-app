@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import timezoneReducer from '../../features/timezone/timezoneSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    time: timezoneReducer,
   },
 });
 
