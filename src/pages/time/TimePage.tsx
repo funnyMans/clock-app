@@ -1,31 +1,32 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import Clock from "./components/Clock/Clock";
-import Spinner from "../../app/components/Spinner";
-import TimeZoneSelector from "./components/TimeZoneSelector/TimeZoneSelector";
+import Clock from './components/Clock/Clock';
+import Spinner from '../../app/components/Spinner';
+import TimeZoneSelector from './components/TimeZoneSelector/TimeZoneSelector';
 
-import { useAppDispatch, useAppSelector } from "../../app/redux/hooks";
-import { TimePageSC } from "./styled";
+import { useAppDispatch, useAppSelector } from '../../app/redux/hooks';
+import { TimePageSC } from './styled';
 import {
-  selectTimezone,
   selectTimezoneStatus,
   setAsyncTimezone,
-} from "../../features/timezone/timezoneSlice";
+} from '../../features/timezone/timezoneSlice';
 
 interface IProps {}
 
+const defaultZone = 'Asia/Yerevan';
+
 const TimePage = (props: IProps) => {
   const dispatch = useAppDispatch();
-  const timezone = useAppSelector(selectTimezone);
   const timeStatus = useAppSelector(selectTimezoneStatus);
 
   useEffect(() => {
-    dispatch(setAsyncTimezone("Asia/Yerevan"));
+    dispatch(setAsyncTimezone(defaultZone));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <TimePageSC>
       <TimeZoneSelector />
-      {timeStatus === "loading" && <Spinner />}
+      {timeStatus === 'loading' && <Spinner />}
       <Clock />
     </TimePageSC>
   );
