@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface IProps extends React.PropsWithChildren {
   show: boolean;
@@ -7,9 +7,9 @@ export interface IProps extends React.PropsWithChildren {
 const MainContent = ({ show, children }: IProps) => {
   return (
     <div
-      className={`${
-        show ? "translate-x-0 " : "-translate-x-64"
-      } xl:rounded-l transform ease-in-out transition duration-700 flex justify-center items-center flex-col w-full h-full`}
+      className={`w-3/4 max-sm:w-full flex p-5  ${
+        show ? 'max-sm:translate-y-0' : '-translate-y-full'
+      } transform ease-in-out transition duration-700`}
     >
       {children}
     </div>

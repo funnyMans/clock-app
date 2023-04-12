@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 interface IMarking {
   deg?: number;
@@ -14,7 +14,7 @@ interface IClockHand {
 
 const getClockHandStyle = ({ hand, hours, minutes, seconds }: IClockHand) => {
   switch (hand) {
-    case "hour":
+    case 'hour':
       return `width: 25%;
     height: 10px;
   transition: 1s ease;
@@ -22,12 +22,12 @@ const getClockHandStyle = ({ hand, hours, minutes, seconds }: IClockHand) => {
       (hours % 12) * 30 + minutes / 2 + 90
     }deg);`;
 
-    case "minute":
+    case 'minute':
       return `width: 40%;
     height: 8px;
     background: #161718; transform: rotate(${minutes * 6 + 90}deg);`;
 
-    case "second":
+    case 'second':
       return `width: 45%;
     height: 8px;
     background: #aa0f0a; transform: rotate(${seconds * 6 + 90}deg);`;
@@ -35,8 +35,8 @@ const getClockHandStyle = ({ hand, hours, minutes, seconds }: IClockHand) => {
 };
 
 export const ClockSC = styled.div`
-  width: 30rem;
-  height: 30rem;
+  width: 300px;
+  height: 300px;
   position: relative;
   padding: 2rem;
   border: 7px solid #282828;
@@ -48,7 +48,7 @@ export const ClockSC = styled.div`
 `;
 
 export const MarkingSC = styled.div<IMarking>`
-  content: "";
+  content: '';
   position: absolute;
   width: 5px;
   height: 90%;
@@ -73,7 +73,7 @@ export const InnerClockFaceSC = styled.div`
 `;
 
 export const CircleSC = styled.div`
-  content: "";
+  content: '';
   position: absolute;
   top: 49%;
   left: 49%;

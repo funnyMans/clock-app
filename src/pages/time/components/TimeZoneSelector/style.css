@@ -31,14 +31,14 @@ select::-ms-expand {
   margin-top: 2rem;
   position: relative;
   display: flex;
-  width: 20em;
+  width: 40vw;
   height: 3em;
   border-radius: 0.25em;
   overflow: hidden;
   cursor: pointer;
 }
 .select::after {
-  content: "\25BC";
+  content: '\25BC';
   position: absolute;
   top: 0;
   right: 0;
